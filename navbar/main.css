@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #fff;
+}
+
+.main {
+    width: 1200px;
+    min-height: 100vh;
+    max-width: 100%;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    background-color: #333;
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 48px;
+}
+
+/* Article */
+h1 {
+    line-height: 2rem;
+}
+
+article {
+    padding: 0 16px;
+    line-height: 1.6rem;
+}
+
+article img {
+    width: 640px;
+    max-width: 100%;
+    display: block;
+    margin: 32px auto;
+}
+
+#appear-nav {
+    display: none;
+}
+
+@media only screen and (min-width: 64em) {
+    .nav__lt-tablet-container {
+        display: none;
+    }
+
+    .nav__lt-tablet {
+        display: none;
+    }
+}
+
+/* tablet + mobile */
+
+.nav__lt-tablet {
+    width: 20px;
+    height: 20px;
+    margin-left: 16px;
+    color: #fff;
+}
+
+@media only screen and (max-width: 63.9375em) {
+    .nav__list {
+        display: none;
+    }
+
+    .nav__overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        display: none;
+    }
+
+    .nav__lt-tablet-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 320px;
+        max-width: 100%;
+        background-color: #fff;
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: transform linear 0.3s, opacity linear 0.3s;
+    }
+
+    .nav__lt-tablet-list {
+        padding-top: 16px;
+    }
+
+    .nav__lt-tablet-list li {
+        list-style: none;
+        padding: 20px;
+    }
+
+    .nav__lt-tablet-link {
+        text-decoration: none;
+        color: #333;
+        font-size: 1.4rem;
+    }
+
+    .nav__lt-tablet-close {
+        position: absolute;
+        height: 24px;
+        width: 24px;
+        top: 16px;
+        right: 16px;
+        color: #999;
+    }
+
+    #appear-nav:checked ~ .nav__overlay {
+        display: block;
+    }
+
+    #appear-nav:checked ~ .nav__lt-tablet-container {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

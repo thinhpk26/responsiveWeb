@@ -1,0 +1,9 @@
+:root {
+    --cl-1: calc(100% / 12);
+}
+
+div {
+    background-color: red;
+    width: var(--cl-1);
+    height: 200px;
+}
